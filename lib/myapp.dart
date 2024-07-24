@@ -1,0 +1,19 @@
+import 'package:flutter/material.dart';
+import 'package:projects_iti/dummy_projects/whatsapp/whatsapp.dart';
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+
+  Widget build(BuildContext context) {
+    /// (1) Material App
+    /// (2) home: Screen (UI)
+    /// (3) Scaffold ( widget )
+
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: WhatsappScreen(),
+    );
+  }
+}
