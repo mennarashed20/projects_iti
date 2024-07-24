@@ -1,21 +1,27 @@
 import 'package:flutter/material.dart';
 
-class WhatsappScreen extends StatelessWidget {
-  const WhatsappScreen({super.key});
+import '../../constant.dart';
+import '../models/chat_model.dart';
+
+
+
+class Whatsapp extends StatelessWidget {
+  const Whatsapp({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final  List<ChatModel1> chatList = jsonList.map((e) => ChatModel1.fromJson(e)).toList();
     return Scaffold(
       appBar: _appBar(),
       body: Padding(
-        padding: EdgeInsets.all(20),
+        padding: const EdgeInsets.all(20),
         child: Column(
           children: [
             _specificChat(
               icon: Icons.lock,
               text: "Locked Chats",
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             _specificChat(
@@ -23,20 +29,78 @@ class WhatsappScreen extends StatelessWidget {
               text: "Archive Chats",
               isCountVisable: true,
             ),
-            // Row(
-            //   children: [
-            //     Icon(
-            //       Icons.archive,
-            //       color: Colors.green,
-            //     ),
-            //     Text(" Archive Chats"),
-            //     Spacer(),
-            //     Text("1")
-            //   ],
-            // ),
+            const SizedBox(
+              height: 10,
+            ),
+            ListView.separated(
+              shrinkWrap: true,
+              itemCount: chatList.length,
+              separatorBuilder: (context, index) => Divider(
+                color: Colors.grey.withOpacity(.2),
+              ),
+              itemBuilder: (context, index) => _buildChatItem(
+                name: chatList[index].name!,
+                message: chatList[index].message!,
+                image: chatList[index].image!,
+                time: chatList[index].time!,
+              ),
+            ),
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.green,
+        onPressed: () {},
+        child: const Icon(
+          Icons.messenger,
+          color: Colors.white,
+        ),
+      ),
+    );
+  }
+
+  Widget _buildChatItem({
+    required String name,
+    required String message,
+    required String image,
+    required String time,
+  }) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        CircleAvatar(
+          radius: 30,
+          backgroundImage: NetworkImage(
+            image,
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                name,
+                style: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                message,
+                style: const TextStyle(color: Colors.grey),
+              ),
+            ],
+          ),
+        ),
+        const Spacer(),
+        Text(
+          time,
+          style: const TextStyle(
+            color: Colors.grey,
+          ),
+        ),
+      ],
     );
   }
 
@@ -51,12 +115,12 @@ class WhatsappScreen extends StatelessWidget {
           icon,
           color: Colors.green,
         ),
-        SizedBox(
+        const SizedBox(
           width: 10,
         ),
         Text(text),
-        Spacer(),
-        if (isCountVisable) Text("1")
+        const Spacer(),
+        if (isCountVisable) const Text("1")
       ],
     );
   }
@@ -71,7 +135,7 @@ Widget _buildMyActionsItem(
         icon,
         color: Colors.white,
       ),
-      SizedBox(
+      const SizedBox(
         width: 10,
       ),
     ],
@@ -82,7 +146,7 @@ AppBar _appBar() {
   return AppBar(
     elevation: 5,
     backgroundColor: Colors.green,
-    title: Text(
+    title: const Text(
       "WhatsApp",
       style: TextStyle(
         color: Colors.white,
@@ -96,3 +160,39 @@ AppBar _appBar() {
     ],
   );
 }
+
+List<Map> jsonList = [
+  {
+
+
+    "name": "mai",
+    "message": "Hi..",
+    "image": imageList[0],
+    "time": "6 AM",
+
+  },
+  {
+
+    "name": "olaa",
+    "message": "Hello From",
+    "image": imageList[1],
+    "time": "9 AM",
+
+  },
+  {
+
+    "name": "farida",
+    "message": "Hello ",
+    "image": imageList[2],
+    "time": "5 pm",
+
+  },
+  {
+
+    "name": "Menna",
+    "message": "Hello From",
+    "image": imageList[3],
+    "createdAt": "4.30 pm",
+
+  }
+];
