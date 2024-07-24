@@ -10,11 +10,44 @@ List imageList = [
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJjlqGUjmSX56wQ0b4BKG7y3G0BeNN9V0z2w&s",
 ];
 
-
-
-
 List<Map> jsonList = [
   {
+
+    "name": "mai",
+    "message": "Hi..",
+    "image": imageList[0],
+    "time": "6 AM",
+    "count": "2"
+  },
+
+  {
+    "count": "3",
+    "name" : "olaa",
+    "message": "Hello From",
+    "image": imageList[1],
+    "time": "9 AM",
+
+  },
+  {
+    "count": "10",
+
+    "name": "marwa",
+    "message": "Hi..",
+    "image": imageList[0],
+    "time": "6 AM",
+
+  },
+  {
+    "count": "7",
+    "name": "menna",
+    "message": "Hello From",
+    "image": imageList[3],
+    "time": "9 AM",
+
+  },
+
+  {
+    "count": "9",
 
     "name": "mai",
     "message": "Hi..",
@@ -23,6 +56,7 @@ List<Map> jsonList = [
 
   },
   {
+    "count": "6",
 
     "name": "olaa",
     "message": "Hello From",
@@ -31,19 +65,22 @@ List<Map> jsonList = [
 
   },
   {
+    "count": "11",
 
-    "name": "farida",
-    "message": "Hello ",
-    "image": imageList[2],
-    "time": "5 pm",
+    "name": "marwa",
+    "message": "Hi..",
+    "image": imageList[0],
+    "time": "6 AM",
 
   },
   {
+    "count": "4",
 
-    "name": "Menna",
+    "name": "menna",
     "message": "Hello From",
-    "image": imageList[2],
-    "time": "4.30 pm",
+    "image": imageList[3],
+    "time": "9 AM",
 
-  }
+  },
+
 ];

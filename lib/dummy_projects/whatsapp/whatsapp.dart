@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../constant.dart';
-import '../models/chat_model.dart';
+import 'models/chat_model.dart';
+
 
 
 
@@ -32,17 +33,22 @@ class Whatsapp extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            ListView.separated(
-              shrinkWrap: true,
-              itemCount: chatList.length,
-              separatorBuilder: (context, index) => Divider(
-                color: Colors.grey.withOpacity(.2),
-              ),
-              itemBuilder: (context, index) => _buildChatItem(
-                name: chatList[index].name!,
-                message: chatList[index].message!,
-                image: chatList[index].image!,
-                time: chatList[index].time!,
+            Expanded(
+              child: ListView.separated(
+                //shrinkWrap: true,
+                itemCount: chatList.length,
+                separatorBuilder: (context, index) => Divider(
+                  color: Colors.grey.withOpacity(.2),
+                ),
+
+                itemBuilder: (context, index) => _buildChatItem(
+                  name: chatList[index].name!,
+                  message: chatList[index].message!,
+                  image: chatList[index].image!,
+                  time: chatList[index].time!,
+                  count: chatList[index].count!,
+
+                ),
               ),
             ),
           ],
@@ -64,6 +70,7 @@ class Whatsapp extends StatelessWidget {
     required String message,
     required String image,
     required String time,
+    required String count,
   }) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -94,11 +101,27 @@ class Whatsapp extends StatelessWidget {
           ),
         ),
         const Spacer(),
-        Text(
-          time,
-          style: const TextStyle(
-            color: Colors.grey,
-          ),
+        Column(
+
+          children: [
+            Text(
+              time,
+              style: const TextStyle(
+                color: Colors.grey,
+              ),
+            ),
+
+            CircleAvatar(
+              backgroundColor: Colors.green,
+              radius: 13,
+              child: Text(
+                count,
+
+
+              ),
+            )
+
+          ],
         ),
       ],
     );
@@ -160,39 +183,3 @@ AppBar _appBar() {
     ],
   );
 }
-
-List<Map> jsonList = [
-  {
-
-
-    "name": "mai",
-    "message": "Hi..",
-    "image": imageList[0],
-    "time": "6 AM",
-
-  },
-  {
-
-    "name": "olaa",
-    "message": "Hello From",
-    "image": imageList[1],
-    "time": "9 AM",
-
-  },
-  {
-
-    "name": "farida",
-    "message": "Hello ",
-    "image": imageList[2],
-    "time": "5 pm",
-
-  },
-  {
-
-    "name": "Menna",
-    "message": "Hello From",
-    "image": imageList[3],
-    "createdAt": "4.30 pm",
-
-  }
-];
