@@ -2,7 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:projects_iti/dummy_projects/messengeer/widgets/messenger_screen.dart';
 
-import 'dummy_projects/whatsapp/whatsapp.dart';
+//import 'dummy_projects/whatsapp/whatsapp.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
