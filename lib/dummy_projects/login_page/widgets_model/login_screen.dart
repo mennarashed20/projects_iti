@@ -58,7 +58,7 @@ class LoginScreen extends StatelessWidget {
                   ),
                       Expanded(
                             flex: 5,child: Container(
-                        width: double.infinity,decoration: BoxDecoration(
+                        width: double.infinity,decoration: const BoxDecoration(
                         color: Colors.white,borderRadius: BorderRadius.only(topLeft: Radius.circular(40),
                       topRight: Radius.circular(40),
 
@@ -79,12 +79,12 @@ class LoginScreen extends StatelessWidget {
 
                                     ),
                                     filled: true,
-                                    fillColor: Color(0xFFe7edeb),
+                                    fillColor: const Color(0xFFe7edeb),
                                     hintText: "Email",
                                     prefixIcon: Icon(Icons.email,color: Colors.grey[600],)
                                   ),
                                 ),
-                                SizedBox(height: 20.0,),
+                                const SizedBox(height: 20.0,),
                                 TextField(
                                   keyboardType: TextInputType.visiblePassword,
                                   decoration: InputDecoration(
@@ -94,13 +94,13 @@ class LoginScreen extends StatelessWidget {
 
                                       ),
                                       filled: true,
-                                      fillColor: Color(0xFFe7edeb),
+                                      fillColor: const Color(0xFFe7edeb),
                                       hintText: "your password",
                                       prefixIcon: Icon(Icons.email,color: Colors.grey[600],)
                                   ),
 
                                 ),
-                                SizedBox(height: 20.0,),
+                                const SizedBox(height: 20.0,),
                                 const Row(
                                   mainAxisAlignment: MainAxisAlignment.end,
                                   children: [
@@ -110,7 +110,7 @@ class LoginScreen extends StatelessWidget {
                                     )
                                   ],
                                 ),
-                                SizedBox(height: 50.0,),
+                                const SizedBox(height: 50.0,),
 
 
                                 Container(
