@@ -1,8 +1,10 @@
 
 import 'package:flutter/material.dart';
-import 'package:projects_iti/dummy_projects/login_page/login_screen.dart';
+//import 'package:projects_iti/dummy_projects/login_page/login_screen.dart';
 
 //import 'package:projects_iti/dummy_projects/messengeer/widgets/messenger_screen.dart';
+
+import 'dummy_projects/login_page/widgets_model/login_screen.dart';
 
 
 
