@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-
 
 
 class LoginScreen extends StatelessWidget {
@@ -9,190 +7,152 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.indigo,
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 15.0, top:60),
-              child: LoginHeader(),
-            ),
-            Expanded(
-              child: Container(
-                padding: const EdgeInsets.all(20),
-                decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40),
-                        topRight: Radius.circular(40))),
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const SizedBox(height: 100,),
-                      const TextFormFields(),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      const Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
+ body: SingleChildScrollView(
+      child: Container(
+        constraints: BoxConstraints(
+          maxHeight: MediaQuery.of(context).size.height,
+            maxWidth:MediaQuery.of(context).size.width,
+        ),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            colors:[
+              Colors.blue.shade800,
+              Colors.blue.shade600,
+            ] ,
+            begin: Alignment.topLeft,
+            end: Alignment.centerRight,
+          )
+
+        ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                   const Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(vertical: 36.0,horizontal: 24.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+                          Text("Login",style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 46.0,
+                          fontWeight: FontWeight.w800
+
+                          ) ),
+                              SizedBox(height: 10.0,),
+
                           Text(
-                            "forget password",
-                            style: TextStyle(color: Colors.blue),
-                          )
-                        ],
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      Container(
-                        width: double.infinity,
-                        decoration: BoxDecoration(
-                          color: Colors.indigo,
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor:
-                            Colors.indigo, // Set the button color to indigo
-                          ),
-                          child: const Text(
-                            'Login',
-                            style: TextStyle(
+                              "Enter to a beautiful world",style: TextStyle(
                               color: Colors.white,
+                              fontSize: 22.0,
+                              fontWeight: FontWeight.w300
+
+                          ) ),
+                        ],
+
+                      ),
+                    ),
+
+
+                  ),
+                      Expanded(
+                            flex: 5,child: Container(
+                        width: double.infinity,decoration:  const BoxDecoration(
+                        color: Colors.white,borderRadius: BorderRadius.only(topLeft: Radius.circular(40),
+                      topRight: Radius.circular(40),
+
+                      )),
+
+                          child:Padding(
+                            padding:  const EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                TextField(
+                                   keyboardType: TextInputType.emailAddress,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(8.0),
+                                      borderSide: BorderSide.none,
+
+                                    ),
+                                    filled: true,
+                                    fillColor:  const Color(0xFFe7edeb),
+                                    hintText: "Email",
+                                    prefixIcon: Icon(Icons.email,color: Colors.grey[600],)
+                                  ),
+                                ),
+                                 const SizedBox(height: 20.0,),
+                                TextField(
+                                  keyboardType: TextInputType.visiblePassword,
+                                  decoration: InputDecoration(
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(8.0),
+                                        borderSide: BorderSide.none,
+
+                                      ),
+                                      filled: true,
+                                      fillColor:  const Color(0xFFe7edeb),
+                                      hintText: "your password",
+                                      prefixIcon: Icon(Icons.email,color: Colors.grey[600],)
+                                  ),
+
+                                ),
+                                 const SizedBox(height: 20.0,),
+                                 const Row(
+                                  mainAxisAlignment: MainAxisAlignment.end,
+                                  children: [
+                                    Text(
+                                      "forget password?",
+                                      style: TextStyle(color: Colors.blue),
+                                    )
+                                  ],
+                                ),
+                                 const SizedBox(height: 50.0,),
+
+
+                                Container(
+                                  width: double.infinity,
+
+                                  decoration: BoxDecoration(
+                                    color: Colors.indigo,
+                                    borderRadius: BorderRadius.circular(5),
+                                  ),
+                                  child: ElevatedButton(
+
+                                    onPressed: () {},
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor:
+                                      Colors.indigo, // Set the button color to indigo
+                                    ),
+                                    child:  const Text(
+                                      'Login',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+
                             ),
                           ),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 30,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("Don't Have an Account ? ",
-                              style: TextStyle(color: Colors.grey[700])),
-                          const Text("Register Now",
-                              style: TextStyle(color: Colors.blue)),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+
+
+
+                      ),)
+                ],
+
               ),
-            )
-          ],
-        ),
       ),
-    );
-  }
-}
+
+
+ ),
 
 
 
-
-class LoginHeader extends StatelessWidget {
-  const LoginHeader({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Login',
-          style: TextStyle(
-              color: Colors.white, fontSize: 40, fontWeight: FontWeight.w900),
-        ),
-        SizedBox(
-          height: 5,
-        ),
-        Text(
-          "Enter a beautiful world",
-          style: TextStyle(
-            color: Colors.grey,
-            fontSize: 20,
-          ),
-        ),
-        SizedBox(
-          height: 20,
-        ),
-      ],
-    );
-  }
-}
-
-
-
-
-class CustomTextFormField extends StatelessWidget {
-  const CustomTextFormField(
-      {super.key,
-        required this.hintText,
-        this.prefixIcon,
-        this.suffixIcon,
-        this.obscureText});
-
-  final String hintText;
-  final Widget? prefixIcon;
-  final Widget? suffixIcon;
-  final bool? obscureText;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 60,
-      decoration: BoxDecoration(
-          color: Colors.grey[300], borderRadius: BorderRadius.circular(5)),
-      child: Center(
-        child: TextFormField(
-          obscureText: obscureText ?? false,
-          decoration: InputDecoration(
-              border: InputBorder.none,
-              prefixIcon: prefixIcon,
-              hintText: hintText,
-              suffixIcon: suffixIcon ?? const SizedBox()),
-        ),
-      ),
-    );
-  }
-}
-
-class TextFormFields extends StatefulWidget {
-  const TextFormFields({super.key});
-
-  @override
-  State<TextFormFields> createState() => _TextFormFieldsState();
-}
-
-class _TextFormFieldsState extends State<TextFormFields> {
-  bool _obscureText = true;
-
-  void _togglePasswordView() {
-    setState(() {_obscureText = !_obscureText;
-    });
-  }
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const CustomTextFormField(
-          hintText: "your email ",
-          prefixIcon: Icon(Icons.email_outlined),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        CustomTextFormField(
-          hintText: "your password",
-          prefixIcon: const Icon(Icons.lock_open),
-          obscureText: _obscureText,
-
-        )
-      ],
     );
   }
 }
