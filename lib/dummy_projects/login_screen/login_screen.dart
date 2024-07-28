@@ -80,6 +80,8 @@ class LoginScreen extends StatelessWidget {
                             ),
                             filled: true,
                             fillColor:  const Color(0xFFe7edeb),
+
+                            //
                             hintText: "Email",
                             prefixIcon: Icon(Icons.email,color: Colors.grey[600],)
                         ),

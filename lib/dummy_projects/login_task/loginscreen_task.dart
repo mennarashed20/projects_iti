@@ -120,7 +120,7 @@ class _DummyLoginScreenState extends State<DummyLoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text("Forget Password", style: TextStyle(color: Colors.grey.shade500)),
-
+//
                   ],
                 ),
                 const SizedBox(

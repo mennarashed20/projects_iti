@@ -6,7 +6,6 @@ import 'package:projects_iti/dummy_projects/login_task/loginscreen_task.dart';
 
 //import 'package:projects_iti/dummy_projects/messengeer/widgets/messenger_screen.dart';
 
-
 //import 'dummy_projects/whatsapp/whatsapp.dart';
 
 class MyApp extends StatelessWidget {
