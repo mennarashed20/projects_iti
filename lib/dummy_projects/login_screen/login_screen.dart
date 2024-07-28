@@ -87,6 +87,7 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(height: 20.0,),
                       TextField(
                         keyboardType: TextInputType.visiblePassword,
+
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(8.0),
@@ -94,11 +95,12 @@ class LoginScreen extends StatelessWidget {
 
                             ),
                             filled: true,
+
                             fillColor:  const Color(0xFFe7edeb),
                             hintText: "your password",
                             prefixIcon: Icon(Icons.email,color: Colors.grey[600],)
                         ),
-
+                            obscureText: true,
                       ),
                       const SizedBox(height: 20.0,),
                       const Row(
