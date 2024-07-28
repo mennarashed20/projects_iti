@@ -120,7 +120,6 @@ class _DummyLoginScreenState extends State<DummyLoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text("Forget Password", style: TextStyle(color: Colors.grey.shade500)),
-//
                   ],
                 ),
                 const SizedBox(
@@ -139,7 +138,6 @@ class _DummyLoginScreenState extends State<DummyLoginScreen> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         color: const Color.fromARGB(255, 6, 87, 154),
-
                         borderRadius: BorderRadius.circular(10)),
                     child: const Center(
                       child: Text(
@@ -168,7 +166,6 @@ class _DummyLoginScreenState extends State<DummyLoginScreen> {
                     )
                   ],
                 ),
-
               ],
             ),
           ),

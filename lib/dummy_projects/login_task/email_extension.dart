@@ -5,6 +5,3 @@ extension EmailValidation on String {
         .hasMatch(this);
   }
 }
-
-
-//
